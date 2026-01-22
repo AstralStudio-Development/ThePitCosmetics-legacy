@@ -1,0 +1,16 @@
+main: cn.starry.cosmetics.Cosmetics
+name: ThePitCosmetics
+authors: [ Starry_Killer, pi_ka ]
+version: 1.0.5
+
+depend:
+  - ThePitPremium
+
+softdepend:
+  - Vault
+  - XConomy
+
+commands:
+  cosmetics:
+    aliases:
+      - cos

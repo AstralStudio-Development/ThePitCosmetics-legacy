@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.0'
+}
+
+group = 'cn.sky'
+version = '1.0.5'
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    maven {
+        name = "aliyun-repo"
+        url = "https://maven.aliyun.com/repository/public/"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'pack', include: '*.jar')
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+tasks.withType(Jar).configureEach {
+    archiveBaseName.set('ThePitCosmetics')
+    archiveVersion.set('')
+    archiveClassifier.set('')
+}
+
+build.dependsOn(shadowJar)

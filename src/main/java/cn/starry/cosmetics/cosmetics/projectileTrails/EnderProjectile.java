@@ -1,0 +1,55 @@
+package cn.starry.cosmetics.cosmetics.projectileTrails;
+
+import cn.starry.cosmetics.api.cosmetics.CosmeticRarity;
+import cn.starry.cosmetics.api.cosmetics.projectileTrails.ProjectileTrailCosmetic;
+import cn.starry.cosmetics.util.ParticleBuilder;
+import net.minecraft.server.v1_8_R3.EnumParticle;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class EnderProjectile extends ProjectileTrailCosmetic {
+    @Override
+    public String getDisplayName() {
+        return "末影";
+    }
+
+    @Override
+    public List<String> getDescription() {
+        return Arrays.asList("&7选择" + getDisplayName() + "弹射物轨迹");
+    }
+
+    @Override
+    public ItemStack getIcon() {
+        return new ItemStack(Material.EYE_OF_ENDER);
+    }
+
+    @Override
+    public int getPrice() {
+        return 5000;
+    }
+
+    @Override
+    public CosmeticRarity getCosmeticRarity() {
+        return CosmeticRarity.COMMON;
+    }
+
+    @Override
+    public int getId() {
+        return 2;
+    }
+
+    @Override
+    public boolean BuyAble() {
+        return true;
+    }
+
+    @Override
+    public void runParticleEffect(Location loc) {
+        new ParticleBuilder(loc, EnumParticle.PORTAL).play();
+    }
+}
+

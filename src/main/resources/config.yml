@@ -1,0 +1,16 @@
+database:
+  host: "localhost"
+  port: 3306
+  database: "cosmetics"
+  username: "root"
+  password: "root"
+  ssl: false
+server-name: "&rserver"
+available:
+  deathCry: true
+  killEffect: true
+  projectileTrails: true
+slot:
+  deathCry: 15
+  killEffect: 13
+  projectileTrails: 11
